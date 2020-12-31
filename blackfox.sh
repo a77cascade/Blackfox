@@ -80,7 +80,7 @@ elif [[ $ba == 2 ]]; then
 fi
 
 echo '8 Установка основных пакетов'
-pacstrap /mnt base base-devel bash-completion linux-hardened linux-firmware nano dhcpcd netctl
+pacstrap /mnt base base-devel bash-completion linux-hardened linux-firmware nano tor dhcpcd netctl
 
 echo '9 Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
