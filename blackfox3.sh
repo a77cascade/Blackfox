@@ -17,7 +17,7 @@ echo '37 Установить рекомендумые программы?'
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
   #Можно заменить на pacman -Qqm > ~/.pacmanlist.txt
-  sudo pacman -S recoll chromium flameshot obs-studio veracrypt vlc freemind filezilla gimp kdenlive neofetch qbittorrent galculator --noconfirm
+  sudo pacman -S recoll chromium flameshot obs-studio veracrypt vlc freemind filezilla gimp kdenlive neofetch qbittorrent galculator torbrowser-launcher --noconfirm
   yay -Syy
   yay -S xflux sublime-text-dev hunspell-ru pamac-aur-git megasync-nopdfium trello xorg-xkill ttf-symbola ttf-clear-sans --noconfirm
 elif [[ $prog_set == 0 ]]; then
