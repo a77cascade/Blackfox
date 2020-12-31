@@ -11,7 +11,7 @@ sudo pacman -S xdg-user-dirs --noconfirm
 xdg-user-dirs-update
 
 echo '36 Установка базовых программ и пакетов'
-sudo pacman -S sudo pacman -S reflector firefox firefox-i18n-ruca libreoffice-fresh libreoffice-fresh-ru ufw f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller gvfs aspell-ru pulseaudio pulseaudio-alsa pavucontrol virtualbox-guest-utils pcmanfm terminator vlc p7zip unrar unzip nano xf86-input-synaptics iproute2 gedit eog eog-plugins pidgin toxcore deluge qmmp xfburn thunderbird gnome-system-monitor doublecmd-gtk2 pinta recoll deadbeef bleachbit evince mlocate antiword catdoc unrtf djvulibre id3lib aspell-en --noconfirm 
+sudo pacman -S reflector firefox firefox-i18n-ruca libreoffice-fresh libreoffice-fresh-ru ufw f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller gvfs aspell-ru pulseaudio pulseaudio-alsa pavucontrol virtualbox-guest-utils pcmanfm terminator vlc p7zip unrar unzip nano xf86-input-synaptics iproute2 gedit eog eog-plugins pidgin toxcore deluge qmmp xfburn thunderbird gnome-system-monitor doublecmd-gtk2 pinta recoll deadbeef bleachbit evince mlocate antiword catdoc unrtf djvulibre id3lib aspell-en --noconfirm 
 
 echo '37 Установить рекомендумые программы?'
 read -p "1 - Да, 0 - Нет: " prog_set
