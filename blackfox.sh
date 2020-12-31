@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Arch Linux Fast Install - Быстрая установка  Linux https://github.com/a77cascade/Blackfox
-# Цель скрипта - быстрое развертывание системы с вашими персональными настройками.
+# Arch Linux Fast Install - Быстрая установка Arch Linux с возможнастью добавить репозитории Blackarch https://github.com/a77cascade/Blackfox
+# Цель скрипта - быстрое развертывание системы с вашими персональными настройками и графическими оболочками Gnome Cinnamon и i3-wm.
 # Автор скрипта Нестеров Валентин https://vk.com/wellwar
 
 loadkeys ru
