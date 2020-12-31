@@ -52,10 +52,10 @@ echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 pacman -Syy
 
 echo '26 Ставим иксы и драйвера'
-pacman -S $gui_install
+pacman -S broadcom-wl $gui_install
 
 echo "27 Ставим Cinnamon и Gnome"
-pacman -S xorg-server xorg-drivers xorg-xinit xorg-apps mesa xorg-twm xorg-xclock gdm cinnamon gnome gnome-tweaks gnome-calculator gnome-screenshot gnome-shell-extensions gnome-catgen-git gnome-extra --noconfirm
+pacman -S xorg-server xorg-drivers xorg-xinit xorg-apps mesa xorg-twm xorg-xclock gdm gnome gnome-tweaks-tool gnome-extra --noconfirm
 
 echo '28 Cтавим DM'
 pacman -S gdm --noconfirm
