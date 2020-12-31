@@ -63,24 +63,14 @@ mkdir -p /mnt/boot/efi
 mount /dev/sda1 /mnt/boot/efi
 mount /dev/sda4 /mnt/home
 
-echo '6 Выбор зеркал для загрузки.'
-pacman -S reflector
-reflector —verbose -l 200 —sort rate —save /etc/pacman.d/mirrorlist
-
-echo '7 Установить репозитории Blackarch?'
-read -p "1 - Да, 2 - Нет: " ba
-if [[ $ba == 1 ]]; then
-    curl -O https://blackarch.org/strap.sh
-    bash ./strap.sh	
-    pacman -Ss blackarch-mirrorlist
-    pacman -Syyu
-elif [[ $ba == 2 ]]; then
-  echo '7.1 Пропускаем.'
-  pacman -Syyu
-fi
+echo '3.1 Выбор зеркал для загрузки.'
+rm -rf /etc/pacman.d/mirrorlist
+wget https://git.io/mlist
+mv -f ~/mlist /etc/pacman.d/mirrorlist
+pacman -Syy
 
 echo '8 Установка основных пакетов'
-pacstrap /mnt base base-devel bash-completion linux-hardened linux-firmware nano tor dhcpcd netctl
+pacstrap /mnt base base-devel bash-completion linux linux-firmware nano tor dhcpcd netctl
 
 echo '9 Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
