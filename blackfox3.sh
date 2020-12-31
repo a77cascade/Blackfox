@@ -2,18 +2,18 @@
 mkdir ~/Downloads
 cd ~/Downloads
 
-echo 'Установка AUR (yay)'
+echo '34 Установка AUR (yay)'
 sudo pacman -Syu
 wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
 
-echo 'Создаем нужные директории'
+echo '35 Создаем нужные директории'
 sudo pacman -S xdg-user-dirs --noconfirm
 xdg-user-dirs-update
 
-echo 'Установка базовых программ и пакетов'
+echo '36 Установка базовых программ и пакетов'
 sudo pacman -S sudo pacman -S reflector firefox firefox-i18n-ruca libreoffice-fresh libreoffice-fresh-ru ufw f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller gvfs aspell-ru pulseaudio pulseaudio-alsa pavucontrol virtualbox-guest-utils pcmanfm terminator vlc p7zip unrar unzip nano xf86-input-synaptics iproute2 gedit eog eog-plugins pidgin toxcore deluge qmmp xfburn thunderbird gnome-system-monitor doublecmd-gtk2 pinta recoll deadbeef bleachbit evince mlocate antiword catdoc unrtf djvulibre id3lib aspell-en --noconfirm 
 
-echo 'Установить рекомендумые программы?'
+echo '37 Установить рекомендумые программы?'
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
   #Можно заменить на pacman -Qqm > ~/.pacmanlist.txt
@@ -24,7 +24,7 @@ elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
 
-echo "Ставим i3 с моими настройками?"
+echo '38 Ставим i3 с моими настройками?'
 read -p "1 - Да, 2 - Нет: " vm_setting
 if [[ $vm_setting == 1 ]]; then
     sudo pacman -S i3-wm polybar dmenu ttf-font-awesome feh gvfs udiskie xorg-xbacklight ristretto tumbler compton jq --noconfirm
@@ -37,7 +37,7 @@ elif [[ $vm_setting == 2 ]]; then
   echo 'Пропускаем.'
 fi
 
-echo 'Установить conky?'
+echo '39 Установить conky?'
 read -p "1 - Да, 0 - Нет: " conky_set
 if [[ $conky_set == 1 ]]; then
   sudo pacman -S conky conky-manager --noconfirm
@@ -47,18 +47,16 @@ elif [[ $conky_set == 0 ]]; then
   echo 'Установка conky пропущена.'
 fi
 
-# Подключаем zRam
+echo '40 Подключаем zRam'
 yay -S zramswap --noconfirm
 sudo systemctl enable zramswap.service
 
-echo 'Включаем сетевой экран'
+echo '41 Включаем сетевой экран'
 sudo ufw enable
 
-echo 'Добавляем в автозагрузку:'
+echo '42 Добавляем в автозагрузку:'
 sudo systemctl enable ufw
 
-# Очистка
+echo '43 Установка завершена!'
 rm -rf ~/Downloads/
-
-echo 'Установка завершена!'
 exit
