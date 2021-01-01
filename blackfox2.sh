@@ -25,14 +25,15 @@ mkinitcpio -p linux
 
 echo '18 Устанавливаем загрузчик'
 pacman -Syy
-pacman -S grub efibootmgr --noconfirm 
+pacman -S grub efibootmgr  
 grub-install /dev/sda
 
 echo '19 Обновляем grub.cfg'
 grub-mkconfig -o /boot/grub/grub.cfg
 
-echo '20 Ставим программу для Wi-fi'
-pacman -S dialog wpa_supplicant --noconfirm 
+echo '20 Ставим программу для Wi-fi и проводного интернета'
+pacman -S dialog wpa_supplicant netctl dhclient dialog
+pacman -S dhcpcd iputils
 
 echo '21 Добавляем пользователя'
 useradd -m -g users -G wheel -s /bin/bash $username
@@ -52,7 +53,7 @@ echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 pacman -Syy
 
 echo '26 Ставим иксы и драйвера'
-pacman -S xorg-server xorg-drivers xorg-xinit xorg-apps mesa xorg-twm xorg-xclock xorg lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader intel-ucode iucode-tool broadcom-wl virtualbox --noconfirm
+pacman -S xorg-server xorg-drivers xorg-xinit xorg-apps mesa xorg-twm xorg-xclock xorg xf86-input-synaptics lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader intel-ucode iucode-tool broadcom-wl virtualbox --noconfirm
 modprobe -a vboxguest vboxsf vboxvideo
 cp /etc/X11/xinit/xinitrc /home/mial/.xinitrc
 echo -e "\nvboxguest\nvboxsf\nvboxvideo" >> /etc/modules-load.d/virtualbox.conf
@@ -61,15 +62,15 @@ echo "27 Ставим Gnome"
 pacman -S gnome gnome-tweaks-tool
 
 echo '28 Cтавим DM'
-pacman -S gdm --noconfirm
+pacman -S gdm 
 mv /usr/share/xsessions/gnome.desktop ~/
 systemctl enable gdm
 
 echo '29 Ставим шрифты'
-pacman -S ttf-liberation ttf-dejavu --noconfirm
+pacman -S ttf-liberation ttf-dejavu 
 
 echo '30 Ставим сеть'
-pacman -S networkmanager network-manager-applet ppp --noconfirm
+pacman -S networkmanager network-manager-applet ppp 
 
 echo '31 Подключаем автозагрузку менеджера входа и интернет'
 systemctl enable NetworkManager
