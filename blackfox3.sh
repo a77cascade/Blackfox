@@ -35,6 +35,11 @@ sudo ufw enable
 echo '42 Добавляем в автозагрузку:'
 sudo systemctl enable ufw
 
+echo 'Обновления системы и чистка её'
+pacman -Sc pacman-optimize --noconfirm
+yay -Syu pamac-all
+pacman -R gnome-books gnome-boxes gnome-calculator gnome-calendar gnome-contacts gnome-maps gnome-music gnome-weather gnome-clocks gnome-documents gnome-photos gnome-software gnome-user-docs totem malcontent yelp gnome-getting-started-docs
+
 echo '43 Установка завершена!'
 reboot
 exit
