@@ -7,7 +7,7 @@ sudo pacman -S xdg-user-dirs --noconfirm
 xdg-user-dirs-update
 
 echo '36 Установка базовых программ и пакетов'
-sudo pacman -S recoll firefox firefox-i18n-ru libreoffice-fresh libreoffice-fresh-ru chromium flameshot obs-studio veracrypt vlc freemind kdenlive neofetch qbittorrent galculator torbrowser-launcher pulseaudio pulseaudio-alsa pavucontrol virtualbox-guest-utils pcmanfm terminator --noconfirm
+sudo pacman -S recoll firefox firefox-i18n-ru libreoffice-fresh libreoffice-fresh-ru chromium flameshot obs-studio veracrypt vlc freemind kdenlive neofetch qbittorrent galculator torbrowser-launcher pulseaudio pulseaudio-alsa pavucontrol virtualbox pcmanfm terminator --noconfirm
 
 echo '38 Добавить репозитории Blackarch?'
 read -p "1 - Да, 2 - Нет: " ba
@@ -37,8 +37,6 @@ sudo systemctl enable ufw
 
 echo 'Обновления системы и чистка её'
 pacman -Sc pacman-optimize --noconfirm
-yay -Syu pamac-all
-pacman -R gnome-books gnome-boxes gnome-calculator gnome-calendar gnome-contacts gnome-maps gnome-music gnome-weather gnome-clocks gnome-documents gnome-photos gnome-software gnome-user-docs totem malcontent yelp gnome-getting-started-docs
 
 echo '43 Установка завершена!'
 reboot
