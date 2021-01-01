@@ -70,7 +70,7 @@ mv -f ~/mlist /etc/pacman.d/mirrorlist
 pacman -Syy
 
 echo '8 Установка основных пакетов'
-pacstrap /mnt base base-devel bash-completion linux linux-firmware nano tor dhcpcd netctl
+pacstrap /mnt base base-devel bash-completion virtualbox linux linux-firmware nano tor dhcpcd netctl lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader intel-ucode iucode-tool broadcom-wl-dkms
 
 echo '9 Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
