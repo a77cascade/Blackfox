@@ -52,10 +52,13 @@ echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 pacman -Syy
 
 echo '26 Ставим иксы и драйвера'
-pacman -S lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader xf86-input-keyboard xf86-input-mouse xf86-input-synaptics intel-ucode iucode-tool broadcom-wl 
+pacman -S xorg-server xorg-drivers xorg-xinit xorg-apps mesa xorg-twm xorg-xclock xorg lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader intel-ucode iucode-tool broadcom-wl virtualbox --noconfirm
+modprobe -a vboxguest vboxsf vboxvideo
+cp /etc/X11/xinit/xinitrc /home/mial/.xinitrc
+echo -e "\nvboxguest\nvboxsf\nvboxvideo" >> /etc/modules-load.d/virtualbox.conf
 
 echo "27 Ставим Gnome"
-pacman -S xorg-server xorg-drivers xorg-xinit xorg-apps mesa xorg-twm xorg-xclock xorg -configure gdm gnome gnome-tweaks-tool gnome-devel-docs --noconfirm
+pacman -S gnome gnome-tweaks-tool
 
 echo '28 Cтавим DM'
 pacman -S gdm --noconfirm
