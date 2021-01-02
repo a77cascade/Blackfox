@@ -7,7 +7,7 @@ sudo pacman -S xdg-user-dirs --noconfirm
 xdg-user-dirs-update
 
 echo '36 Установка базовых программ и пакетов'
-sudo pacman -S recoll firefox firefox-i18n-ru libreoffice-fresh libreoffice-fresh-ru chromium flameshot obs-studio veracrypt vlc freemind kdenlive neofetch qbittorrent galculator torbrowser-launcher pulseaudio pulseaudio-alsa pavucontrol virtualbox pcmanfm terminator --noconfirm
+sudo pacman -S recoll firefox firefox-i18n-ru libreoffice-fresh libreoffice-fresh-ru chromium flameshot obs-studio veracrypt vlc freemind kdenlive neofetch qbittorrent galculator torbrowser-launcher pulseaudio pulseaudio-alsa pavucontrol virtualbox pcmanfm terminator
 
 echo '38 Добавить репозитории Blackarch?'
 read -p "1 - Да, 2 - Нет: " ba
@@ -22,11 +22,10 @@ elif [[ $ba == 2 ]]; then
 fi
 
 echo '34 Установка AUR (yay)'
-sudo pacman -Syu
 wget git.io/yay-install.sh && sh yay-install.sh
 
 echo '40 Подключаем zRam'
-yay -S zramswap --noconfirm
+yay -S zramswap
 sudo systemctl enable zramswap.service
 
 echo '41 Включаем сетевой экран'
@@ -36,7 +35,7 @@ echo '42 Добавляем в автозагрузку:'
 sudo systemctl enable ufw
 
 echo 'Обновления системы и чистка её'
-pacman -Sc pacman-optimize --noconfirm
+pacman -Sy pacman-optimize 
 
 echo '43 Установка завершена!'
 reboot
