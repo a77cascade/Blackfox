@@ -70,7 +70,8 @@ echo '29 Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu 
 
 echo '30 Ставим сеть'
-pacman -S networkmanager network-manager-applet ppp 
+pacman -S networkmanager net-tools network-manager-applet ppp 
+
 
 echo '31 Подключаем автозагрузку менеджера входа и интернет'
 systemctl enable NetworkManager
