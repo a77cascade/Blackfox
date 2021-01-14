@@ -38,5 +38,5 @@ echo 'Обновления системы и чистка её'
 pacman -Sy pacman-optimize 
 
 echo '43 Установка завершена!'
-reboot
 exit
+reboot
