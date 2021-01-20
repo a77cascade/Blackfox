@@ -50,7 +50,7 @@ echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 pacman -Syy
 
 echo '26 Ставим иксы и драйвера'
-pacman -S xorg-server xorg-drivers xorg-xinit xorg-apps mesa xorg-twm xorg-xclock xorg xf86-input-synaptics lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader intel-ucode iucode-tool broadcom-wl --noconfirm
+pacman -S xorg-server xorg-drivers xorg-xinit xorg-apps mesa xorg-twm xorg-xclock xorg xf86-input-synaptics vulkan-intel vulkan-icd-loader intel-ucode iucode-tool broadcom-wl-dkms
 
 echo "27 Ставим Awesome"
 pacman -S awesome
