@@ -52,7 +52,7 @@ pacman -Syy
 echo '26 Ставим иксы и драйвера'
 pacman -S xorg-server xorg-drivers xorg-xinit xorg-apps mesa xorg-twm xorg-xclock xorg xf86-input-synaptics lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader intel-ucode iucode-tool broadcom-wl --noconfirm
 
-echo "27 Ставим Gnome"
+echo "27 Ставим Awesome"
 pacman -S awesome
 
 echo '28 Cтавим DM'
