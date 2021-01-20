@@ -29,7 +29,7 @@ echo '19 Обновляем grub.cfg'
 grub-mkconfig -o /boot/grub/grub.cfg
 
 echo '20 Ставим программу для Wi-fi и проводного интернета'
-pacman -S dialog wpa_supplicant netctl dhclient dialog
+pacman -S dialog wpa_supplicant netctl dhclient 
 pacman -S dhcpcd iputils
 
 echo '21 Добавляем пользователя'
