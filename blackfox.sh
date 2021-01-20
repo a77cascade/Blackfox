@@ -71,7 +71,7 @@ pacman -Syy
 
 echo '8 Установка основных пакетов'
 pacstrap /mnt base base-devel bash-completion linux linux-firmware 
-pacman -S nano tor dhcpcd netctl vulkan-intel vulkan-icd-loader intel-ucode iucode-tool broadcom-wl
+pacman -S nano tor dhcpcd netctl dkms vulkan-intel vulkan-icd-loader intel-ucode iucode-tool broadcom-wl-dkms
 
 echo '9 Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
