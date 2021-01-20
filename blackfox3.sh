@@ -7,7 +7,7 @@ sudo pacman -S xdg-user-dirs --noconfirm
 xdg-user-dirs-update
 
 echo '36 Установка базовых программ и пакетов'
-sudo pacman -S neofetch chromium veracrypt vlc kdenlive qbittorrent torbrowser-launcher pulseaudio pulseaudio-alsa alsa-utils alsa-oss pavucontrol pcmanfm terminology
+sudo pacman -S neofetch chromium veracrypt vlc kdenlive qbittorrent torbrowser-launcher pulseaudio pulseaudio-alsa alsa-utils alsa-oss pavucontrol pcmanfm rxvt-unicode terminology
 
 echo '38 Добавить репозитории Blackarch?'
 wget https://blackarch.org/strap.sh
