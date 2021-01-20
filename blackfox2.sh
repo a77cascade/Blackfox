@@ -53,12 +53,17 @@ echo '26 Ставим иксы и драйвера'
 pacman -S xorg-server xorg-drivers xorg-xinit xorg-apps mesa xorg-twm xorg-xclock xorg xf86-input-synaptics vulkan-intel vulkan-icd-loader intel-ucode iucode-tool broadcom-wl-dkms
 
 echo "27 Ставим Awesome"
+pacman -S gvfs ntfs-3g mtools
 pacman -S awesome
+pacman -S vicious
+pacman -S nodejs code yarn
+mkdir -p ~/.config/awesome
+cp /etc/xdg/awesome/rc.lua ~/.config/awesome/
+cp -R /usr/share/awesome* ~/.config/awesome/
 
 echo '28 Cтавим DM'
-pacman -S lxdm
-cp /etc/lxdm/lxdm.conf ~/.condig/lxdm.conf
-systemctl enable lxdm
+pacman -S lightdm lightdm-gtk-greeter
+systemctl enable lightdm.service
 
 echo '29 Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu noto-fonts ttf-roboto ttf-droid
@@ -70,7 +75,7 @@ echo '31 Подключаем автозагрузку менеджера вхо
 systemctl enable NetworkManager
 
 echo '32 Установка wget git asp'
-pacman -S git
+pacman -S git wget curl asp
 sudo pacman -S --noconfirm --needed wget curl asp
 git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
