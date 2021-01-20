@@ -50,10 +50,10 @@ fdisk -l
 
 echo '4 Форматирование дисков'
 mkfs.fat -F32 /dev/sda1
-mkfs.btrfs  /dev/sda2
+mkfs.ext4 /dev/sda2
 mkswap /dev/sda3
 swapon /dev/sda3
-mkfs.btrfs  /dev/sda4
+mkfs.ext4 /dev/sda4
 
 echo '5 Монтирование дисков'
 mount /dev/sda2 /mnt
@@ -71,9 +71,8 @@ pacman -Syy
 
 echo '8 Установка основных пакетов'
 pacstrap /mnt base base-devel bash-completion linux linux-firmware 
-pacman -S nano tor dhcpcd netctl lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader intel-ucode iucode-tool broadcom-wl
+pacman -S nano tor dhcpcd netctl vulkan-intel vulkan-icd-loader intel-ucode iucode-tool broadcom-wl
 
 echo '9 Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
-
 arch-chroot /mnt sh -c "$(curl -fsSL git.io/blackfox2.sh)"
