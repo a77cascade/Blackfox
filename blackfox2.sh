@@ -61,7 +61,7 @@ cp /etc/lxdm/lxdm.conf ~/.condig/lxdm.conf
 systemctl enable lxdm
 
 echo '29 Ставим шрифты'
-pacman -S ttf-liberation ttf-dejavu 
+pacman -S ttf-liberation ttf-dejavu noto-fonts ttf-roboto ttf-droid
 
 echo '30 Ставим сеть'
 pacman -S networkmanager net-tools network-manager-applet ppp 
