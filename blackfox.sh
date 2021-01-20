@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Arch Linux Fast Install - Быстрая установка Arch Linux с возможнастью добавить репозитории Blackarch https://github.com/a77cascade/Blackfox
-# Цель скрипта - быстрое развертывание системы с вашими персональными настройками и графическими оболочками Gnome Cinnamon и i3-wm.
+# Цель скрипта - быстрое развертывание системы с вашими персональными настройками и графическими оболочками Awesome
 # Автор скрипта Нестеров Валентин https://vk.com/wellwar
 
 loadkeys ru
@@ -49,7 +49,6 @@ echo '3 Ваша разметка диска'
 fdisk -l
 
 echo '4 Форматирование дисков'
-
 mkfs.fat -F32 /dev/sda1
 mkfs.btrfs  /dev/sda2
 mkswap /dev/sda3
@@ -64,6 +63,7 @@ mount /dev/sda1 /mnt/boot/efi
 mount /dev/sda4 /mnt/home
 
 echo '3.1 Выбор зеркал для загрузки.'
+pacman -Sy wget
 rm -rf /etc/pacman.d/mirrorlist
 wget https://git.io/mlist
 mv -f ~/mlist /etc/pacman.d/mirrorlist
@@ -71,7 +71,7 @@ pacman -Syy
 
 echo '8 Установка основных пакетов'
 pacstrap /mnt base base-devel bash-completion linux linux-firmware 
-pacman -S virtualbox nano tor dhcpcd netctl lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader intel-ucode iucode-tool broadcom-wl-dkms
+pacman -S nano tor dhcpcd netctl lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader intel-ucode iucode-tool broadcom-wl
 
 echo '9 Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
