@@ -53,12 +53,13 @@ pacman -S xorg-server xorg-drivers xorg-xinit xorg-apps mesa xorg-twm xorg-xcloc
 
 echo "27 Ставим Awesome"
 pacman -S gvfs ntfs-3g mtools
-pacman -S awesome
+pacman -S awesome 
 pacman -S vicious
 pacman -S nodejs code yarn
 mkdir -p ~/.config/awesome
 cp /etc/xdg/awesome/rc.lua ~/.config/awesome/
 cp -R /usr/share/awesome* ~/.config/awesome/
+pacman -S fluxbox
 
 echo '28 Cтавим DM'
 pacman -S lightdm lightdm-gtk-greeter
